@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "TypeProof",
+  "version": "0.6.0",
+  "description": "Create witnessed, tamper-evident typing proofs in inputs and rich-text editors.",
+  "minimum_chrome_version": "109",
+  "permissions": ["activeTab", "clipboardWrite", "scripting", "storage", "unlimitedStorage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.mjs",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "TypeProof",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"
+  }
+}

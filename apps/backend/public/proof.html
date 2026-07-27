@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Published TypeProof</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <nav><a class="brand" href="/">TypeProof</a><a href="/">Verify another proof</a></nav>
+      <section class="hero published-hero">
+        <p class="eyebrow">Published verification</p>
+        <h1 id="published-title">Checking proof…</h1>
+        <p id="published-summary">Validating signatures, live checkpoints, and typed-text provenance.</p>
+      </section>
+      <section id="published-result" class="result" hidden>
+        <div id="published-verdict" class="verdict"></div>
+        <h2>Witnessed document</h2>
+        <p class="provenance-legend"><span class="provenance-key typed-key"></span>Typed <span class="provenance-key assisted-key"></span>Editor-assisted or pre-existing</p>
+        <pre id="certified-content" class="certified-content"></pre>
+        <dl id="published-metrics"></dl>
+        <div id="published-checks" class="checks"></div>
+        <div class="share-tools">
+          <button id="copy-link">Copy verification link</button>
+          <button id="copy-embed" class="outline-button">Copy badge embed</button>
+        </div>
+        <details>
+          <summary>What this does and does not prove</summary>
+          <ul id="published-limitations"></ul>
+        </details>
+      </section>
+      <p id="published-error" class="error" role="alert"></p>
+    </main>
+    <script src="/proof.js"></script>
+  </body>
+</html>

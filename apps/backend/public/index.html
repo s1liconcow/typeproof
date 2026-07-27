@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Verify a TypeProof</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <nav><a class="brand" href="/">TypeProof</a><a href="/write">Writing pad</a></nav>
+      <section class="hero">
+        <p class="eyebrow">Independent verifier</p>
+        <h1>Inspect the evidence,<br>not a confidence score.</h1>
+        <p>Upload a TypeProof JSON artifact. This witness will validate every signature, replay every edit, and compare the receipt to its own trust key.</p>
+      </section>
+
+      <section class="panel">
+        <label class="drop-zone" for="proof-file">
+          <span>Choose a proof artifact</span>
+          <small>JSON stays on this service and is not persisted by the reference server.</small>
+          <input id="proof-file" type="file" accept="application/json,.json">
+        </label>
+        <button id="verify" disabled>Verify proof</button>
+        <p id="error" class="error" role="alert"></p>
+      </section>
+
+      <section id="result" class="result" hidden aria-live="polite">
+        <div id="verdict" class="verdict"></div>
+        <p id="summary"></p>
+        <h2>Witnessed document</h2>
+        <p class="provenance-legend"><span class="provenance-key typed-key"></span>Typed <span class="provenance-key assisted-key"></span>Editor-assisted or pre-existing</p>
+        <pre id="verified-content" class="certified-content"></pre>
+        <dl id="metrics"></dl>
+        <div id="checks" class="checks"></div>
+        <details>
+          <summary>Security limitations</summary>
+          <ul id="limitations"></ul>
+        </details>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

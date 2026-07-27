@@ -1,0 +1,18 @@
+{
+  "name": "typeproof",
+  "version": "0.6.0",
+  "private": true,
+  "type": "module",
+  "description": "Tamper-evident evidence that text was entered as individual keyboard events.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev:server": "node apps/backend/src/server.mjs",
+    "start": "node apps/backend/src/server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:chrome": "npm run build && node scripts/chrome-e2e-smoke.mjs",
+    "verify": "node apps/backend/src/cli.mjs verify"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

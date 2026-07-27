@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light;
+  --ink: #17231f;
+  --muted: #617069;
+  --paper: #f4f0e7;
+  --card: #fffdf8;
+  --green: #176b4d;
+  --green-soft: #dcecdf;
+  --red: #a33b32;
+  --line: #d8d2c5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 360px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main { padding: 20px; }
+
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--ink); color: #fff; font: 700 23px/1 Georgia, serif; }
+h1 { margin: 0; font: 700 22px/1.15 Georgia, serif; }
+.tagline { margin: 2px 0 0; color: var(--muted); }
+
+.status-card { display: flex; gap: 10px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.status-card p { margin: 3px 0 0; color: var(--muted); }
+.status-dot { flex: 0 0 auto; width: 9px; height: 9px; margin-top: 5px; border-radius: 50%; background: #a7aaa7; box-shadow: 0 0 0 4px #e8e6df; }
+.status-dot.live { background: var(--green); box-shadow: 0 0 0 4px var(--green-soft); }
+.status-dot.invalid { background: var(--red); box-shadow: 0 0 0 4px #f4dedb; }
+
+.actions { display: grid; gap: 8px; margin-top: 12px; }
+button { border: 0; border-radius: 9px; padding: 10px 12px; font: 650 14px/1.2 inherit; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .48; }
+.primary { background: var(--green); color: white; }
+.danger { background: var(--red); color: white; }
+.secondary { border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.compact { padding: 8px 10px; background: var(--ink); color: white; }
+
+.message { min-height: 20px; margin: 10px 2px 0; color: var(--red); }
+details { margin-top: 4px; border-top: 1px solid var(--line); padding-top: 12px; }
+summary { cursor: pointer; color: var(--muted); }
+label { display: block; margin: 10px 0 4px; font-size: 12px; font-weight: 700; }
+.settings-row { display: grid; grid-template-columns: 1fr auto; gap: 6px; }
+input { min-width: 0; border: 1px solid var(--line); border-radius: 8px; background: white; padding: 8px; color: var(--ink); }
+aside { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+aside strong { color: var(--ink); }
+aside p { margin: 5px 0; }
+.share-card { margin-top: 12px; padding: 13px; border: 1px solid #bdd7c7; border-radius: 11px; background: #f8fff9; }
+.share-card a { display: block; margin: 5px 0 9px; overflow: hidden; color: var(--green); text-overflow: ellipsis; white-space: nowrap; }
+.share-card small { display: block; margin-top: 9px; color: var(--muted); }
+.share-actions { display: flex; flex-wrap: wrap; gap: 6px; }

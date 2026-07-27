@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TypeProof</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="mark" aria-hidden="true">T</div>
+        <div>
+          <h1>TypeProof</h1>
+          <p class="tagline">Witness the act of typing.</p>
+        </div>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <span id="status-dot" class="status-dot"></span>
+        <div>
+          <strong id="status-title">Checking recorder…</strong>
+          <p id="status-detail">Focus an editable surface to begin.</p>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="start" class="primary" disabled>Start witnessed session</button>
+        <button id="stop" class="danger" hidden>Stop &amp; seal proof</button>
+        <button id="writer" class="secondary">Open clean writing pad</button>
+        <button id="download" class="secondary" hidden>Download last proof</button>
+        <button id="publish" class="secondary" hidden>Publish proof publicly…</button>
+      </div>
+
+      <section id="share-card" class="share-card" hidden>
+        <strong>Published verification</strong>
+        <a id="verification-link" target="_blank" rel="noreferrer"></a>
+        <div class="share-actions">
+          <button id="copy-link" class="compact">Copy link</button>
+          <button id="copy-embed" class="compact">Copy linked badge</button>
+          <button id="copy-badge-url" class="compact">Copy icon URL</button>
+        </div>
+        <small>Publishing makes the certified text and full proof publicly accessible to anyone with the link.</small>
+      </section>
+
+      <p id="message" class="message" role="alert"></p>
+
+      <details>
+        <summary>Witness settings</summary>
+        <label for="server-url">Witness URL</label>
+        <div class="settings-row">
+          <input id="server-url" type="url" spellcheck="false">
+          <button id="save-server" class="compact">Save</button>
+        </div>
+      </details>
+
+      <aside>
+        <strong>What this establishes</strong>
+        <p>A valid proof reconstructs typed and editor-assisted changes, certifies only keyboard-originated characters, and shows that a witness timestamped the transcript.</p>
+        <p>It cannot prove who originated the ideas or defeat a compromised device or someone manually retyping AI output.</p>
+      </aside>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
